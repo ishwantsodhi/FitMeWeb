@@ -1,5 +1,22 @@
 <html>
-     <body>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script type="application/javascript">
+            function parseUrl( url ) {
+                var a = document.createElement('a');
+                a.href = url;
+                return a;
+            }
+            $(document).ready(function (){
+                var auth_code = parseUrl(window.location.href).search;               
+                var url = 'http://fitmeapp.mybluemix.net' + '/fitbit_callback' + auth_code;
+                $.get(url, function(response) {
+                    console.log(response);
+                })
+            });
+        </script>
+    </head>
+    <body>
           Hello, Welcome to FitMe!
-     </body>
+    </body>
 </html>
