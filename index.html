@@ -8,6 +8,9 @@
                 var code = window.location.href.split('?')[1].split('&')[1].split('code=')[1];
                 var url = 'http://fitmeapp.mybluemix.net/fitbit_callback?' + queryString;
                 console.log(url);
+                $.get(url, function(response){
+                  console.log(response);
+                });
             });
         </script>
     </head>
