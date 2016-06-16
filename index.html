@@ -6,7 +6,11 @@
             $(document).ready(function () {
                 var queryString = window.location.href.split('?')[1];
                 var url = 'http://fitmeapp.mybluemix.net/fitbit_callback?' + queryString;
-                $.get(url, function(response) {
+                $.post(url,
+                {
+                  url: url
+                },
+                function(response){
                     console.log(response);
                 });
             });
