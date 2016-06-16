@@ -7,13 +7,7 @@
                 var queryString = window.location.href.split('?')[1];
                 var code = window.location.href.split('?')[1].split('&')[1].split('code=')[1];
                 var url = 'http://fitmeapp.mybluemix.net/fitbit_callback?' + queryString;
-                $.post(url,
-                {
-                  code: code
-                },
-                function(response){
-                    console.log(response);
-                });
+                console.log(url);
             });
         </script>
     </head>
