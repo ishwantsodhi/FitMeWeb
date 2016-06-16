@@ -5,7 +5,7 @@
         <script type="application/javascript">
             $(document).ready(function () {
                 var queryString = window.location.href.split('?')[1];
-                var url = 'http://fitmeapp.mybluemix.net/fitbit_callback?' + encodeURIComponent(queryString);
+                var url = 'http://fitmeapp.mybluemix.net/fitbit_callback?' + queryString;
                 $.get(url, function(response) {
                     console.log(response);
                 });
