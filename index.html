@@ -5,8 +5,11 @@
         <script type="application/javascript">
             $(document).ready(function () {
                 var queryString = window.location.href.split('?')[1];
-                var code = window.location.href.split('?')[1].split('&')[1].split('code=')[1];
-                var url = 'http://fitmeapp.mybluemix.net/fitbit_callback?' + queryString;
+                // var parsed = window.location.href.split('?')[1].split('&')[1].split('code=')[1];
+                var sliceTrailingChars = queryString.slice(0,queryString.length - 5);
+                // code = code.slice(0,code.length - 1);
+                console.log('sliceTrailingChars', sliceTrailingChars)
+                var url = 'https://a63941fa.ngrok.io/fitbit_callback?' + sliceTrailingChars;
                 console.log(url);
                 $.get(url, function(response){
                   console.log(response);
